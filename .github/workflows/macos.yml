@@ -11,9 +11,12 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        submodules: true
     - name: prepare
       run: |
         make prepare
+        make prepare_vcpkg
     - name: configure
       run: |
         cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="Debug"

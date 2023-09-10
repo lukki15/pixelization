@@ -11,12 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        submodules: true
     - name: install
       run: |
         sudo apt-get install gcovr lcov
     - name: prepare
       run: |
         make prepare
+        make prepare_vcpkg
     - name: configure
       run: |
         cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DENABLE_COVERAGE=On
