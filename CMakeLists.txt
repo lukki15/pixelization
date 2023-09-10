@@ -17,12 +17,12 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # option(USE_CPM "Whether to use CPM." ON)
 
 option(ENABLE_WARNINGS "Enable to add warnings to a target." ON)
-option(ENABLE_WARNINGS_AS_ERRORS "Enable to treat warnings as errors." OFF)
+option(ENABLE_WARNINGS_AS_ERRORS "Enable to treat warnings as errors." ON)
 
 option(ENABLE_TESTING "Enable a Unit Testing build." ON)
 option(ENABLE_COVERAGE "Enable a Code Coverage build." OFF)
 
-option(ENABLE_CLANG_TIDY "Enable to add clang tidy." OFF)
+option(ENABLE_CLANG_TIDY "Enable to add clang tidy." ON)
 
 option(ENABLE_SANITIZE_ADDR "Enable address sanitize." OFF)
 option(ENABLE_SANITIZE_UNDEF "Enable undefined sanitize." OFF)
