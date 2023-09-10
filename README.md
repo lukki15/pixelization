@@ -6,11 +6,12 @@
 [![Ubuntu CI Test](https://github.com/lukki15/pixelization/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/lukki15/pixelization/actions/workflows/ubuntu.yml)
 [![Windows CI Test](https://github.com/lukki15/pixelization/actions/workflows/windows.yml/badge.svg)](https://github.com/lukki15/pixelization/actions/workflows/windows.yml)
 [![MacOS CI Test](https://github.com/lukki15/pixelization/actions/workflows/macos.yml/badge.svg)](https://github.com/lukki15/pixelization/actions/workflows/macos.yml)
+
 [![pre-commit](https://github.com/lukki15/pixelization/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/lukki15/pixelization/actions/workflows/pre-commit.yml)
 [![Documentation](https://github.com/lukki15/pixelization/actions/workflows/documentation.yml/badge.svg)](https://github.com/lukki15/pixelization/actions/workflows/documentation.yml)
 
 
 [![codecov](https://codecov.io/gh/lukki15/pixelization/graph/badge.svg?token=3HLOXGNKR2)](https://codecov.io/gh/lukki15/pixelization)
-[![CodeQL](https://github.com/lukki15/pixelization/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/lukki15/pixelization/actions/workflows/github-code-scanning/codeql)
+[![CodeQL](https://github.com/lukki15/pixelization/actions/workflows/codeql.yml/badge.svg)](https://github.com/lukki15/pixelization/actions/workflows/codeql.yml)
 
 Convert images into pixel art
