@@ -12,6 +12,7 @@ CMakeUserPresets.json
 build/
 html/
 lectures/
+vcpkg_installed/
 
 ################################
 ############ C/C++ #############

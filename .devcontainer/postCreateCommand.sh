@@ -11,5 +11,7 @@ sudo apt-get install -y -q \
     python3 python3-pip \
     clang-format clang-tidy
 
-pip install conan
-conan profile detect
+pip install pre-commit
+
+make prepare
+make prepare_vcpkg

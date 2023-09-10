@@ -11,9 +11,14 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        submodules: true
     - name: prepare
       run: |
         make prepare
+        .\external\vcpkg\bootstrap-vcpkg.bat
+        .\external\vcpkg\vcpkg install
+        .\external\vcpkg\vcpkg integrate install
     - name: configure
       run: |
         cmake -H"." -Bbuild -T host=x86 -A x64 -DCMAKE_BUILD_TYPE="Debug"

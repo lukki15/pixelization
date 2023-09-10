@@ -9,6 +9,7 @@
 		"vscode": {
 			"extensions": [
 				"mhutchie.git-graph",
+				"ms-vscode.cmake-tools",
 				"ms-vscode.cpptools-extension-pack",
 				"streetsidesoftware.code-spell-checker",
 				"vivaxy.vscode-conventional-commits"
