@@ -1,0 +1,64 @@
+name: Build Target Main CI
+
+on:
+  push:
+    branches: [ main, master, dev ]
+  pull_request:
+    branches: [ main, master, dev ]
+
+jobs:
+  build:
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        submodules: true
+    - name: prepare
+      run: |
+        make prepare
+
+    - if: matrix.os != 'windows-latest'
+      name: prepare vckpg
+      run: |
+        make prepare_vcpkg
+    - if: matrix.os == 'windows-latest'
+      name: prepare vckpg win
+      run: |
+        .\external\vcpkg\bootstrap-vcpkg.bat
+        .\external\vcpkg\vcpkg install
+        .\external\vcpkg\vcpkg integrate install
+
+    - if: matrix.os != 'windows-latest'
+      name: configure
+      run: |
+        cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="Release"
+    - if: matrix.os == 'windows-latest'
+      name: configure win
+      run: |
+        cmake -H"." -Bbuild -T host=x86 -A x64 -DCMAKE_BUILD_TYPE="Release"
+
+    - name: building
+      run: |
+        cmake --build build --config Release --target main -j
+
+    - if: matrix.os != 'windows-latest'
+      name: running
+      run: |
+        cd build
+        cd app
+        ./main -h
+    - if: matrix.os == 'windows-latest'
+      name: running win
+      run: |
+        cd build
+        cd app
+        cd Release
+        .\main.exe -h

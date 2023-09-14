@@ -1,0 +1,64 @@
+name: Build Target Unit-Test CI
+
+on:
+  push:
+    branches: [ main, master, dev ]
+  pull_request:
+    branches: [ main, master, dev ]
+
+jobs:
+  build:
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        submodules: true
+    - name: prepare
+      run: |
+        make prepare
+
+    - if: matrix.os != 'windows-latest'
+      name: prepare vckpg
+      run: |
+        make prepare_vcpkg
+    - if: matrix.os == 'windows-latest'
+      name: prepare vckpg win
+      run: |
+        .\external\vcpkg\bootstrap-vcpkg.bat
+        .\external\vcpkg\vcpkg install
+        .\external\vcpkg\vcpkg integrate install
+
+    - if: matrix.os != 'windows-latest'
+      name: configure
+      run: |
+        cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="Debug"
+    - if: matrix.os == 'windows-latest'
+      name: configure win
+      run: |
+        cmake -H"." -Bbuild -T host=x86 -A x64 -DCMAKE_BUILD_TYPE="Debug"
+
+    - name: building
+      run: |
+        cmake --build build --config Debug --target unit_tests -j
+
+    - if: matrix.os != 'windows-latest'
+      name: testing
+      run: |
+        cd build
+        cd tests
+        ./unit_tests
+    - if: matrix.os == 'windows-latest'
+      name: testing win
+      run: |
+        cd build
+        cd tests
+        cd Debug
+        .\unit_tests.exe
