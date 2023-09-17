@@ -11,5 +11,5 @@ TEST_CASE("Throws no file found", "[lib_stb, stb_image]")
 
 TEST_CASE("Open successful", "[lib_stb, stb_image]")
 {
-    CHECK_NOTHROW(StbImage("./rgbw-cmyk.png"));
+    CHECK_NOTHROW(StbImage("./tests/images/rgbw-cmyk.png"));
 }

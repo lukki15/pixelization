@@ -29,6 +29,4 @@ jobs:
         cmake --build build --config Debug --target coverage -j4
     - name: testing
       run: |
-        cd build
-        cd tests
         bash <(curl -s https://codecov.io/bash)
