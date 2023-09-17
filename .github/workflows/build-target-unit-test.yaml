@@ -49,16 +49,8 @@ jobs:
       run: |
         cmake --build build --config Debug --target unit_tests -j
 
-    - if: matrix.os != 'windows-latest'
-      name: testing
+    - name: testing
       run: |
         cd build
         cd tests
-        ./unit_tests
-    - if: matrix.os == 'windows-latest'
-      name: testing win
-      run: |
-        cd build
-        cd tests
-        cd Debug
-        .\unit_tests.exe
+        ctest
