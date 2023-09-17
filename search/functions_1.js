@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['set_9',['set',['../my__lib_2CMakeLists_8txt.html#abc4a43310046a92baeb76452c0d7ee5c',1,'set(LIBRARY_SOURCES &quot;${CMAKE_CURRENT_SOURCE_DIR}/my_lib.cc&quot;) set(LIBRARY_HEADERS &quot;$:&#160;CMakeLists.txt'],['../my__lib_2CMakeLists_8txt.html#a3ddbfbe904bdf0d62178df205c3e98ac',1,'set(LIBRARY_INCLUDES &quot;./&quot; &quot;${CMAKE_BINARY_DIR}/configured_files/include&quot;) add_library($:&#160;CMakeLists.txt']]]
+  ['getchannels_24',['getChannels',['../classStbImage.html#a05036bb722ee8de4352163dd88b366ba',1,'StbImage']]],
+  ['getdata_25',['getData',['../classStbImage.html#ae5d69bacfdf1436a507538a54e9492f8',1,'StbImage']]],
+  ['getheight_26',['getHeight',['../classStbImage.html#a5db7a5c39a9f4afbe5fc49e20532175a',1,'StbImage']]],
+  ['getwidth_27',['getWidth',['../classStbImage.html#a586cd33748ecd1fe5c1c52f7fb87f75c',1,'StbImage']]]
 ];

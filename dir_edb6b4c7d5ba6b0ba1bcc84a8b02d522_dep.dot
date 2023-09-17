@@ -1,0 +1,15 @@
+digraph "/home/runner/work/pixelization/pixelization/src/lib_stb" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_68267d1309a1af8e8297ef4c3efbcdba {
+    graph [ bgcolor="#ddddee", pencolor="black", label="src" fontname="Helvetica", fontsize="10", URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html"]
+  subgraph clusterdir_edb6b4c7d5ba6b0ba1bcc84a8b02d522 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_edb6b4c7d5ba6b0ba1bcc84a8b02d522.html"];
+    dir_edb6b4c7d5ba6b0ba1bcc84a8b02d522 [shape=plaintext label="lib_stb"];
+  dir_3273014abc7d13d3a75f57360a4dde4e [shape=box label="lib_stb" fillcolor="white" style="filled" URL="dir_3273014abc7d13d3a75f57360a4dde4e.html"];
+  dir_f12cb7bcd55f2923eea91997bffb67f4 [shape=box label="src" fillcolor="white" style="filled" URL="dir_f12cb7bcd55f2923eea91997bffb67f4.html"];
+  }
+  }
+  dir_f12cb7bcd55f2923eea91997bffb67f4->dir_3273014abc7d13d3a75f57360a4dde4e [headlabel="1", labeldistance=1.5 headhref="dir_000004_000003.html"];
+}

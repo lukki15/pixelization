@@ -1,0 +1,11 @@
+digraph "/home/runner/work/pixelization/pixelization/src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_68267d1309a1af8e8297ef4c3efbcdba {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html"];
+    dir_68267d1309a1af8e8297ef4c3efbcdba [shape=plaintext label="src"];
+  dir_edb6b4c7d5ba6b0ba1bcc84a8b02d522 [shape=box label="lib_stb" fillcolor="white" style="filled" color="red" URL="dir_edb6b4c7d5ba6b0ba1bcc84a8b02d522.html"];
+  dir_08ebf401352d0c333d3a643fc2ed36cf [shape=box label="my_lib" fillcolor="white" style="filled" URL="dir_08ebf401352d0c333d3a643fc2ed36cf.html"];
+  }
+}
