@@ -1,6 +1,7 @@
 if(ENABLE_TESTING)
     file(GLOB TEST_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")
     set(TEST_HEADERS "")
+    set(TEST_WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/images")
 
     add_executable(${UNIT_TEST_NAME} ${TEST_SOURCES} ${TEST_HEADERS})
 
@@ -15,7 +16,7 @@ if(ENABLE_TESTING)
 
     include(CTest)
     include(Catch)
-    catch_discover_tests(${UNIT_TEST_NAME} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/images)
+    catch_discover_tests(${UNIT_TEST_NAME} WORKING_DIRECTORY ${TEST_WORKING_DIRECTORY})
 
     target_set_warnings(
         TARGET
@@ -41,6 +42,9 @@ if(ENABLE_TESTING)
             EXECUTABLE
             ${UNIT_TEST_NAME}
             DEPENDENCIES
-            ${UNIT_TEST_NAME})
+            ${UNIT_TEST_NAME}
+            WORKING_DIRECTORY
+            ${TEST_WORKING_DIRECTORY}
+        )
     endif()
 endif()
