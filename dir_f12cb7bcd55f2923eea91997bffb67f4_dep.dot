@@ -7,5 +7,5 @@ digraph "/home/runner/work/pixelization/pixelization/src/lib_stb/src" {
   dir_3273014abc7d13d3a75f57360a4dde4e [shape=box label="lib_stb" URL="dir_3273014abc7d13d3a75f57360a4dde4e.html"];
   dir_f12cb7bcd55f2923eea91997bffb67f4 [shape=box, label="src", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_f12cb7bcd55f2923eea91997bffb67f4.html"];
   }
-  dir_f12cb7bcd55f2923eea91997bffb67f4->dir_3273014abc7d13d3a75f57360a4dde4e [headlabel="1", labeldistance=1.5 headhref="dir_000004_000003.html"];
+  dir_f12cb7bcd55f2923eea91997bffb67f4->dir_3273014abc7d13d3a75f57360a4dde4e [headlabel="2", labeldistance=1.5 headhref="dir_000004_000003.html"];
 }
