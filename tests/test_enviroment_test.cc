@@ -1,6 +1,7 @@
 #include <catch2/catch_test_macros.hpp>
 
 #include "test_utils/test_environment.hpp"
+#include <fstream>
 
 TEST_CASE("Create Delete environment", "[test_environment]")
 {
@@ -11,6 +12,7 @@ TEST_CASE("new path set", "[test_environment]")
 {
     TestEnvironment environment{};
     CHECK_FALSE(environment.getNewPath().empty());
+    CHECK(std::filesystem::current_path() == environment.getNewPath());
 }
 
 TEST_CASE("verify environment gets deleted", "[test_environment]")
@@ -31,4 +33,15 @@ TEST_CASE("always new path", "[test_environment]")
     TestEnvironment environment1{};
     TestEnvironment environment2{};
     REQUIRE(environment1.getNewPath() != environment2.getNewPath());
+}
+
+TEST_CASE("create file", "[test_environment]")
+{
+    TestEnvironment environment{};
+
+    std::filesystem::path example_file = "./test.txt";
+    std::ofstream o(example_file);
+
+    CHECK(std::filesystem::exists(example_file));
+    CHECK(std::filesystem::exists(environment.getNewPath() / example_file));
 }

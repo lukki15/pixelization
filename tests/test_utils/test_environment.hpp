@@ -19,7 +19,7 @@ public:
     ~TestEnvironment()
     {
         std::filesystem::current_path(original_path);
-        std::filesystem::remove(new_path);
+        std::filesystem::remove_all(new_path);
     }
 
     const std::filesystem::path &getNewPath() const
