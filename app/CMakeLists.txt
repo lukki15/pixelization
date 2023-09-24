@@ -1,6 +1,9 @@
 set(APP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/main.cc")
 
+set(LIBRARY_INCLUDES "./" "${CMAKE_BINARY_DIR}/configured_files/include")
+
 add_executable(${EXECUTABLE_NAME} ${APP_SOURCES})
+target_include_directories(${EXECUTABLE_NAME} PUBLIC ${LIBRARY_INCLUDES})
 
 target_link_libraries(
     ${EXECUTABLE_NAME}
