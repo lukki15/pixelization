@@ -8,7 +8,6 @@ if(ENABLE_TESTING)
     target_link_libraries(
         ${UNIT_TEST_NAME}
         PUBLIC
-        ${LIBRARY_NAME}
         ${LIBRARY_NAME}-stb
     )
     target_link_libraries(${UNIT_TEST_NAME} PRIVATE Catch2::Catch2WithMain)

@@ -6,7 +6,6 @@
 #include <fmt/format.h>
 
 #include "config.hpp"
-#include "my_lib.h"
 
 int main(int argc, char **argv)
 {
@@ -28,11 +27,6 @@ int main(int argc, char **argv)
         std::cout << options.help() << '\n';
         return 0;
     }
-
-    auto number = result["integer"].as<uint32_t>();
-    auto factorial_result = factorial(number);
-    std::cout << fmt::format("factorial({}) = {}", number, factorial_result)
-              << std::endl;
 
     return 0;
 }
