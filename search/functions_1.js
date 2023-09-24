@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['getchannels_30',['getChannels',['../classStbImage.html#a05036bb722ee8de4352163dd88b366ba',1,'StbImage']]],
-  ['getdata_31',['getData',['../classStbImage.html#ae5d69bacfdf1436a507538a54e9492f8',1,'StbImage']]],
-  ['getheight_32',['getHeight',['../classStbImage.html#a5db7a5c39a9f4afbe5fc49e20532175a',1,'StbImage']]],
-  ['getwidth_33',['getWidth',['../classStbImage.html#a586cd33748ecd1fe5c1c52f7fb87f75c',1,'StbImage']]]
+  ['file_33',['file',['../lib__stb_2CMakeLists_8txt.html#a3b68d0a0ba6f242f1e3253d2ae0b67f2',1,'file(GLOB LIBRARY_SOURCES &quot;${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp&quot;) file(GLOB LIBRARY_HEADERS &quot;$:&#160;CMakeLists.txt'],['../lib__utils_2CMakeLists_8txt.html#a3b68d0a0ba6f242f1e3253d2ae0b67f2',1,'file(GLOB LIBRARY_SOURCES &quot;${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp&quot;) file(GLOB LIBRARY_HEADERS &quot;$:&#160;CMakeLists.txt']]]
 ];

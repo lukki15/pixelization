@@ -6,6 +6,6 @@ digraph "/home/runner/work/pixelization/pixelization/src" {
     graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html"];
     dir_68267d1309a1af8e8297ef4c3efbcdba [shape=plaintext label="src"];
   dir_edb6b4c7d5ba6b0ba1bcc84a8b02d522 [shape=box label="lib_stb" fillcolor="white" style="filled" color="red" URL="dir_edb6b4c7d5ba6b0ba1bcc84a8b02d522.html"];
-  dir_08ebf401352d0c333d3a643fc2ed36cf [shape=box label="my_lib" fillcolor="white" style="filled" URL="dir_08ebf401352d0c333d3a643fc2ed36cf.html"];
+  dir_c17dc64c98cba5e3a5d53b0eb213fc8d [shape=box label="lib_utils" fillcolor="white" style="filled" color="red" URL="dir_c17dc64c98cba5e3a5d53b0eb213fc8d.html"];
   }
 }

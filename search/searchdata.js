@@ -1,10 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "cfgmos~",
-  1: "s",
-  2: "cms",
-  3: "fgos~",
-  4: "s"
+  0: "cdefgios~",
+  1: "is",
+  2: "ceis",
+  3: "dfgios~",
+  4: "d",
+  5: "s"
 };
 
 var indexSectionNames =
@@ -13,7 +14,8 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "defines"
+  4: "typedefs",
+  5: "defines"
 };
 
 var indexSectionLabels =
@@ -22,6 +24,7 @@ var indexSectionLabels =
   1: "Classes",
   2: "Files",
   3: "Functions",
-  4: "Macros"
+  4: "Typedefs",
+  5: "Macros"
 };
 
