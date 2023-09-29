@@ -17,6 +17,18 @@ TEST_CASE("Constexpr", "[lib_utils, image_view]")
     STATIC_CHECK(image_view.get(0, 0) == nullptr);
 }
 
+TEST_CASE("const", "[lib_utils, image_view]")
+{
+    const ImageView image_view{};
+
+    CHECK(image_view.size() == 0);
+    CHECK(image_view.getWidth() == 0);
+    CHECK(image_view.getHeight() == 0);
+    CHECK(image_view.getChannels() == 0);
+    CHECK(image_view.data() == nullptr);
+    CHECK(image_view.get(0, 0) == nullptr);
+}
+
 template <size_t W, size_t H, size_t C>
 static constexpr auto getArrayIota()
 {
