@@ -1,6 +1,9 @@
+#pragma once
+
 #include <cstddef>
 
-class ImageView
+template <typename Data>
+class ImageViewBase
 {
     constexpr auto getIndex(int x, int y) const noexcept
     {
@@ -8,11 +11,9 @@ class ImageView
     }
 
 public:
-    using Data = unsigned char;
-
-    constexpr ImageView() = default;
-    constexpr ImageView(const ImageView &image_view) = default;
-    constexpr ImageView(int width, int height, int channels, const Data *data)
+    constexpr ImageViewBase() = default;
+    constexpr ImageViewBase(const ImageViewBase &image_view) = default;
+    constexpr ImageViewBase(int width, int height, int channels, Data *data)
         : width_{width}, height_(height), channels_(channels), data_(data)
     {
     }
@@ -34,11 +35,11 @@ public:
         return channels_;
     }
 
-    constexpr const Data *data() const noexcept
+    constexpr Data *data() const noexcept
     {
         return data_;
     }
-    constexpr const Data *get(int x, int y) const noexcept
+    constexpr Data *get(int x, int y) const noexcept
     {
         if (data_ == nullptr)
         {
@@ -52,5 +53,8 @@ private:
     const int width_{};
     const int height_{};
     const int channels_{};
-    const Data *data_ = nullptr;
+    Data *data_ = nullptr;
 };
+
+using ImageView = ImageViewBase<unsigned char>;
+using ConstImageView = ImageViewBase<const unsigned char>;

@@ -8,6 +8,7 @@ if(ENABLE_TESTING)
     target_link_libraries(
         ${UNIT_TEST_NAME}
         PUBLIC
+        ${LIBRARY_NAME}-resize
         ${LIBRARY_NAME}-stb
         ${LIBRARY_NAME}-utils
     )

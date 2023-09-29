@@ -35,7 +35,7 @@ TEST_CASE("Constexpr Data", "[lib_utils, image_view]")
     constexpr int height = 3;
     constexpr int channels = 4;
     constexpr std::array data = getArrayIota<width, height, channels>();
-    ImageView image_view{width, height, channels, data.data()};
+    ConstImageView image_view{width, height, channels, data.data()};
 
     CHECK(image_view.size() == data.size());
     CHECK(image_view.getWidth() == width);
@@ -51,7 +51,7 @@ TEST_CASE("Get data", "[lib_utils, image_view]")
     constexpr int height = 3;
     constexpr int channels = 4;
     constexpr std::array data = getArrayIota<width, height, channels>();
-    ImageView image_view{width, height, channels, data.data()};
+    ConstImageView image_view{width, height, channels, data.data()};
 
     int i = 1;
     for (int y = 0; y < height; y++)
