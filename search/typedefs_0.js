@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['data_45',['Data',['../classImageView.html#af1f74bff6e19d5fb45e3b11125590e36',1,'ImageView']]]
+  ['constimageview_52',['ConstImageView',['../image__view_8hpp.html#a811ff8625d62740c5f754f5998b99dde',1,'image_view.hpp']]]
 ];

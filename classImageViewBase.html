@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>C++ Project Template: ImageView Class Reference</title>
+<title>C++ Project Template: ImageViewBase&lt; Data &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,69 +63,50 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classImageView-members.html">List of all members</a>  </div>
+<a href="classImageViewBase-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ImageView Class Reference</div>  </div>
+<div class="title">ImageViewBase&lt; Data &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="image__view_8hpp_source.html">image_view.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:af1f74bff6e19d5fb45e3b11125590e36"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageView.html#af1f74bff6e19d5fb45e3b11125590e36">Data</a> = unsigned char</td></tr>
-<tr class="separator:af1f74bff6e19d5fb45e3b11125590e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af7dfbb2991258cbfdaba57a455803327"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageView.html#af7dfbb2991258cbfdaba57a455803327">ImageView</a> ()=default</td></tr>
-<tr class="separator:af7dfbb2991258cbfdaba57a455803327"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a3caffe905d586fffe34ad560805f7f"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageView.html#a0a3caffe905d586fffe34ad560805f7f">ImageView</a> (const <a class="el" href="classImageView.html">ImageView</a> &amp;image_view)=default</td></tr>
-<tr class="separator:a0a3caffe905d586fffe34ad560805f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e0001a4a923adfcd0003b7eddc05da8"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageView.html#a5e0001a4a923adfcd0003b7eddc05da8">ImageView</a> (int width, int height, int channels, const <a class="el" href="classImageView.html#af1f74bff6e19d5fb45e3b11125590e36">Data</a> *<a class="el" href="classImageView.html#a0b930aed8637f5eb20d9faf89c5eac27">data</a>)</td></tr>
-<tr class="separator:a5e0001a4a923adfcd0003b7eddc05da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee0022a8e8e10ea20e0939f32302dabc"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageView.html#aee0022a8e8e10ea20e0939f32302dabc">size</a> () const noexcept</td></tr>
-<tr class="separator:aee0022a8e8e10ea20e0939f32302dabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71d74efb92526cdc933fb90e4c29d32d"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageView.html#a71d74efb92526cdc933fb90e4c29d32d">getWidth</a> () const noexcept</td></tr>
-<tr class="separator:a71d74efb92526cdc933fb90e4c29d32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f005ad268908e18cfdd5c0f7339a133"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageView.html#a6f005ad268908e18cfdd5c0f7339a133">getHeight</a> () const noexcept</td></tr>
-<tr class="separator:a6f005ad268908e18cfdd5c0f7339a133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac943ceed308752125844b8c590541525"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageView.html#ac943ceed308752125844b8c590541525">getChannels</a> () const noexcept</td></tr>
-<tr class="separator:ac943ceed308752125844b8c590541525"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b930aed8637f5eb20d9faf89c5eac27"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classImageView.html#af1f74bff6e19d5fb45e3b11125590e36">Data</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageView.html#a0b930aed8637f5eb20d9faf89c5eac27">data</a> () const noexcept</td></tr>
-<tr class="separator:a0b930aed8637f5eb20d9faf89c5eac27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad89edf3379ad47d203305c1735de0b31"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classImageView.html#af1f74bff6e19d5fb45e3b11125590e36">Data</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageView.html#ad89edf3379ad47d203305c1735de0b31">get</a> (int x, int y) const noexcept</td></tr>
-<tr class="separator:ad89edf3379ad47d203305c1735de0b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4bf689c92dd0c423f7b81b91eb50e71"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageViewBase.html#ac4bf689c92dd0c423f7b81b91eb50e71">ImageViewBase</a> ()=default</td></tr>
+<tr class="separator:ac4bf689c92dd0c423f7b81b91eb50e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad0c37870fddffacfd152405292280a8"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageViewBase.html#aad0c37870fddffacfd152405292280a8">ImageViewBase</a> (const <a class="el" href="classImageViewBase.html">ImageViewBase</a> &amp;image_view)=default</td></tr>
+<tr class="separator:aad0c37870fddffacfd152405292280a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf6f8e93f6adeae46e24698c8232d9af"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageViewBase.html#abf6f8e93f6adeae46e24698c8232d9af">ImageViewBase</a> (int width, int height, int channels, Data *<a class="el" href="classImageViewBase.html#a6366276953dd506628821e42bda2dc07">data</a>)</td></tr>
+<tr class="separator:abf6f8e93f6adeae46e24698c8232d9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb3d51a9492c723be7228ee6849d378"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageViewBase.html#adfb3d51a9492c723be7228ee6849d378">size</a> () const noexcept</td></tr>
+<tr class="separator:adfb3d51a9492c723be7228ee6849d378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a295aed6bffa01966937f6c14b5913e66"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageViewBase.html#a295aed6bffa01966937f6c14b5913e66">getWidth</a> () const noexcept</td></tr>
+<tr class="separator:a295aed6bffa01966937f6c14b5913e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e300c552c5895fc6cae08db867eee9e"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageViewBase.html#a3e300c552c5895fc6cae08db867eee9e">getHeight</a> () const noexcept</td></tr>
+<tr class="separator:a3e300c552c5895fc6cae08db867eee9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae75aa322e587e0b922315a1173990a78"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageViewBase.html#ae75aa322e587e0b922315a1173990a78">getChannels</a> () const noexcept</td></tr>
+<tr class="separator:ae75aa322e587e0b922315a1173990a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6366276953dd506628821e42bda2dc07"><td class="memItemLeft" align="right" valign="top">constexpr Data *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageViewBase.html#a6366276953dd506628821e42bda2dc07">data</a> () const noexcept</td></tr>
+<tr class="separator:a6366276953dd506628821e42bda2dc07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92f5ec273af509277ffea132a4b4be7a"><td class="memItemLeft" align="right" valign="top">constexpr Data *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageViewBase.html#a92f5ec273af509277ffea132a4b4be7a">get</a> (int x, int y) const noexcept</td></tr>
+<tr class="separator:a92f5ec273af509277ffea132a4b4be7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="af1f74bff6e19d5fb45e3b11125590e36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1f74bff6e19d5fb45e3b11125590e36">&#9670;&nbsp;</a></span>Data</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classImageView.html#af1f74bff6e19d5fb45e3b11125590e36">ImageView::Data</a> =  unsigned char</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af7dfbb2991258cbfdaba57a455803327"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7dfbb2991258cbfdaba57a455803327">&#9670;&nbsp;</a></span>ImageView() <span class="overload">[1/3]</span></h2>
+<a id="ac4bf689c92dd0c423f7b81b91eb50e71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4bf689c92dd0c423f7b81b91eb50e71">&#9670;&nbsp;</a></span>ImageViewBase() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Data &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr ImageView::ImageView </td>
+          <td class="memname">constexpr <a class="el" href="classImageViewBase.html">ImageViewBase</a>&lt; Data &gt;::<a class="el" href="classImageViewBase.html">ImageViewBase</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -140,19 +121,21 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0a3caffe905d586fffe34ad560805f7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a3caffe905d586fffe34ad560805f7f">&#9670;&nbsp;</a></span>ImageView() <span class="overload">[2/3]</span></h2>
+<a id="aad0c37870fddffacfd152405292280a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad0c37870fddffacfd152405292280a8">&#9670;&nbsp;</a></span>ImageViewBase() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Data &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr ImageView::ImageView </td>
+          <td class="memname">constexpr <a class="el" href="classImageViewBase.html">ImageViewBase</a>&lt; Data &gt;::<a class="el" href="classImageViewBase.html">ImageViewBase</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classImageView.html">ImageView</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classImageViewBase.html">ImageViewBase</a>&lt; Data &gt; &amp;&#160;</td>
           <td class="paramname"><em>image_view</em></td><td>)</td>
           <td></td>
         </tr>
@@ -166,17 +149,19 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5e0001a4a923adfcd0003b7eddc05da8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e0001a4a923adfcd0003b7eddc05da8">&#9670;&nbsp;</a></span>ImageView() <span class="overload">[3/3]</span></h2>
+<a id="abf6f8e93f6adeae46e24698c8232d9af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf6f8e93f6adeae46e24698c8232d9af">&#9670;&nbsp;</a></span>ImageViewBase() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Data &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr ImageView::ImageView </td>
+          <td class="memname">constexpr <a class="el" href="classImageViewBase.html">ImageViewBase</a>&lt; Data &gt;::<a class="el" href="classImageViewBase.html">ImageViewBase</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>width</em>, </td>
@@ -196,7 +181,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classImageView.html#af1f74bff6e19d5fb45e3b11125590e36">Data</a> *&#160;</td>
+          <td class="paramtype">Data *&#160;</td>
           <td class="paramname"><em>data</em>&#160;</td>
         </tr>
         <tr>
@@ -215,17 +200,19 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0b930aed8637f5eb20d9faf89c5eac27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b930aed8637f5eb20d9faf89c5eac27">&#9670;&nbsp;</a></span>data()</h2>
+<a id="a6366276953dd506628821e42bda2dc07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6366276953dd506628821e42bda2dc07">&#9670;&nbsp;</a></span>data()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Data &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="el" href="classImageView.html#af1f74bff6e19d5fb45e3b11125590e36">Data</a>* ImageView::data </td>
+          <td class="memname">constexpr Data* <a class="el" href="classImageViewBase.html">ImageViewBase</a>&lt; Data &gt;::data </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -240,17 +227,19 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad89edf3379ad47d203305c1735de0b31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad89edf3379ad47d203305c1735de0b31">&#9670;&nbsp;</a></span>get()</h2>
+<a id="a92f5ec273af509277ffea132a4b4be7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92f5ec273af509277ffea132a4b4be7a">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Data &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="el" href="classImageView.html#af1f74bff6e19d5fb45e3b11125590e36">Data</a>* ImageView::get </td>
+          <td class="memname">constexpr Data* <a class="el" href="classImageViewBase.html">ImageViewBase</a>&lt; Data &gt;::get </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -276,17 +265,19 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac943ceed308752125844b8c590541525"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac943ceed308752125844b8c590541525">&#9670;&nbsp;</a></span>getChannels()</h2>
+<a id="ae75aa322e587e0b922315a1173990a78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae75aa322e587e0b922315a1173990a78">&#9670;&nbsp;</a></span>getChannels()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Data &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto ImageView::getChannels </td>
+          <td class="memname">constexpr auto <a class="el" href="classImageViewBase.html">ImageViewBase</a>&lt; Data &gt;::getChannels </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -301,17 +292,19 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6f005ad268908e18cfdd5c0f7339a133"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f005ad268908e18cfdd5c0f7339a133">&#9670;&nbsp;</a></span>getHeight()</h2>
+<a id="a3e300c552c5895fc6cae08db867eee9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e300c552c5895fc6cae08db867eee9e">&#9670;&nbsp;</a></span>getHeight()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Data &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto ImageView::getHeight </td>
+          <td class="memname">constexpr auto <a class="el" href="classImageViewBase.html">ImageViewBase</a>&lt; Data &gt;::getHeight </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -326,17 +319,19 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a71d74efb92526cdc933fb90e4c29d32d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71d74efb92526cdc933fb90e4c29d32d">&#9670;&nbsp;</a></span>getWidth()</h2>
+<a id="a295aed6bffa01966937f6c14b5913e66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a295aed6bffa01966937f6c14b5913e66">&#9670;&nbsp;</a></span>getWidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Data &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto ImageView::getWidth </td>
+          <td class="memname">constexpr auto <a class="el" href="classImageViewBase.html">ImageViewBase</a>&lt; Data &gt;::getWidth </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -351,17 +346,19 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aee0022a8e8e10ea20e0939f32302dabc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee0022a8e8e10ea20e0939f32302dabc">&#9670;&nbsp;</a></span>size()</h2>
+<a id="adfb3d51a9492c723be7228ee6849d378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfb3d51a9492c723be7228ee6849d378">&#9670;&nbsp;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Data &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr size_t ImageView::size </td>
+          <td class="memname">constexpr size_t <a class="el" href="classImageViewBase.html">ImageViewBase</a>&lt; Data &gt;::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>

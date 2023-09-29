@@ -5,7 +5,9 @@ digraph "/home/runner/work/pixelization/pixelization/src" {
   subgraph clusterdir_68267d1309a1af8e8297ef4c3efbcdba {
     graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html"];
     dir_68267d1309a1af8e8297ef4c3efbcdba [shape=plaintext label="src"];
+  dir_0fbe2dd2394aaa3e721d927528c6ae20 [shape=box label="lib_resize" fillcolor="white" style="filled" color="red" URL="dir_0fbe2dd2394aaa3e721d927528c6ae20.html"];
   dir_edb6b4c7d5ba6b0ba1bcc84a8b02d522 [shape=box label="lib_stb" fillcolor="white" style="filled" color="red" URL="dir_edb6b4c7d5ba6b0ba1bcc84a8b02d522.html"];
   dir_c17dc64c98cba5e3a5d53b0eb213fc8d [shape=box label="lib_utils" fillcolor="white" style="filled" color="red" URL="dir_c17dc64c98cba5e3a5d53b0eb213fc8d.html"];
   }
+  dir_0fbe2dd2394aaa3e721d927528c6ae20->dir_c17dc64c98cba5e3a5d53b0eb213fc8d [headlabel="2", labeldistance=1.5 headhref="dir_000001_000003.html"];
 }
