@@ -1,5 +1,8 @@
 if(ENABLE_TESTING)
-    file(GLOB TEST_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")
+    file(GLOB TEST_SOURCES
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.cc"
+        "${CMAKE_CURRENT_SOURCE_DIR}/resize_tests/*.cc"
+    )
     set(TEST_HEADERS "")
     set(TEST_WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}")
 
