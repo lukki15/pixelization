@@ -4,6 +4,7 @@
 #include <lib_utils/image_view.hpp>
 
 #include <array>
+#include <cmath>
 #include <limits>
 
 template <size_t W, size_t H, size_t C>
@@ -96,7 +97,7 @@ TEST_CASE("input is double output", "[lib_resize, resize, nearest_neighbor]")
         }
     }
 }
-
+#include <iostream>
 TEST_CASE("input is half output", "[lib_resize, resize, nearest_neighbor]")
 {
     InputImage<5, 5, 4> input;
@@ -114,9 +115,11 @@ TEST_CASE("input is half output", "[lib_resize, resize, nearest_neighbor]")
     {
         for (int x = 0; x < output.getWidth(); x++)
         {
+            auto input_x = (x + 1) / 2;
+            auto input_y = (y + 1) / 2;
             for (int c = 0; c < output.getChannels(); c++)
             {
-                CHECK(input.get(x / 2, y / 2)[c] == output.get(x, y)[c]);
+                CHECK(input.get(input_x, input_y)[c] == output.get(x, y)[c]);
             }
         }
     }
@@ -139,9 +142,11 @@ TEST_CASE("input offset", "[lib_resize, resize, nearest_neighbor]")
     {
         for (int x = 0; x < output.getWidth(); x++)
         {
+            auto input_x = static_cast<int>(std::round(x * 10.0 / 3));
+            auto input_y = static_cast<int>(std::round(y * 10.0 / 3));
             for (int c = 0; c < output.getChannels(); c++)
             {
-                CHECK(input.get(x * 3, y * 3)[c] == output.get(x, y)[c]);
+                CHECK(input.get(input_x, input_y)[c] == output.get(x, y)[c]);
             }
         }
     }
@@ -165,9 +170,11 @@ TEST_CASE("input double with half height",
     {
         for (int x = 0; x < output.getWidth(); x++)
         {
+            auto input_x = x * 2;
+            auto input_y = (y + 1) / 2;
             for (int c = 0; c < output.getChannels(); c++)
             {
-                CHECK(input.get(x * 2, y / 2)[c] == output.get(x, y)[c]);
+                CHECK(input.get(input_x, input_y)[c] == output.get(x, y)[c]);
             }
         }
     }

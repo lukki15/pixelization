@@ -3,6 +3,7 @@
 #include <lib_utils/image_view.hpp>
 
 #include <algorithm>
+#include <cmath>
 #include <memory>
 #include <stdexcept>
 
@@ -22,10 +23,10 @@ void resizeNearestNeighbor(const ConstImageView &input, ImageView &output)
 
     for (int y = 0; y < output.getHeight(); y++)
     {
-        int input_y = static_cast<int>(y * delta_height);
+        int input_y = static_cast<int>(std::round(y * delta_height));
         for (int x = 0; x < output.getWidth(); x++)
         {
-            int input_x = static_cast<int>(x * delta_width);
+            int input_x = static_cast<int>(std::round(x * delta_width));
             const auto *input_pixel = input.get(input_x, input_y);
             auto *output_pixel = output.get(x, y);
             std::copy_n(input_pixel, input.getChannels(), output_pixel);
