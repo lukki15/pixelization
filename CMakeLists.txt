@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.21)
 
 project(
-    "CppTemplate"
-    VERSION 1.0.0
+    "Pixelization"
+    VERSION 0.1.0
     LANGUAGES C CXX)
 
 # Global CMake variables are set here
