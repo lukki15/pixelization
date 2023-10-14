@@ -7,6 +7,7 @@
 #include <cmath>
 #include <memory>
 #include <stdexcept>
+#include <vector>
 
 void checkParameters(const ConstImageView &input, const ImageView &output)
 {
