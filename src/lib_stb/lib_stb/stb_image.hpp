@@ -13,15 +13,17 @@ public:
     StbImage &operator=(StbImage &&) = delete;
     ~StbImage() = default;
 
+    using PixelData = unsigned char;
+
     int getWidth() const noexcept;
     int getHeight() const noexcept;
     int getChannels() const noexcept;
 
-    const unsigned char *getData() const noexcept;
+    const PixelData *getData() const noexcept;
 
 private:
-    static void dataDeleter(unsigned char *img_data) noexcept;
-    using Data = std::unique_ptr<unsigned char, decltype(&dataDeleter)>;
+    static void dataDeleter(PixelData *img_data) noexcept;
+    using Data = std::unique_ptr<PixelData, decltype(&dataDeleter)>;
 
     int width{};
     int height{};

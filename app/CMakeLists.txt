@@ -7,7 +7,10 @@ target_include_directories(${EXECUTABLE_NAME} PUBLIC ${LIBRARY_INCLUDES})
 
 target_link_libraries(
     ${EXECUTABLE_NAME}
-    PRIVATE
+    PUBLIC
+        ${LIBRARY_NAME}-resize
+        ${LIBRARY_NAME}-stb
+        ${LIBRARY_NAME}-utils
         fmt::fmt
         cxxopts::cxxopts
 )

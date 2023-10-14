@@ -54,11 +54,11 @@ jobs:
       run: |
         cd build
         cd app
-        ./main -h
+        ./main --help
     - if: matrix.os == 'windows-latest'
       name: running win
       run: |
         cd build
         cd app
         cd Release
-        .\main.exe -h
+        .\main.exe --help
