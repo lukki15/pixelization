@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resizenearestneighbor_47',['resizeNearestNeighbor',['../resize_8hpp.html#a4a0147d06568b191fcfa4d623232153f',1,'resizeNearestNeighbor(const ConstImageView &amp;input, ImageView &amp;output):&#160;resize.cpp'],['../resize_8cpp.html#a4a0147d06568b191fcfa4d623232153f',1,'resizeNearestNeighbor(const ConstImageView &amp;input, ImageView &amp;output):&#160;resize.cpp']]]
+  ['operator_3d_50',['operator=',['../classStbImage.html#a2f80663bfb8b95f0cf01cdcbdb7da688',1,'StbImage::operator=(const StbImage &amp;)=delete'],['../classStbImage.html#a140947031ed99a3de513759dc57ceb8e',1,'StbImage::operator=(StbImage &amp;&amp;)=delete']]]
 ];

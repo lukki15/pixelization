@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['data_38',['data',['../classImageViewBase.html#a6366276953dd506628821e42bda2dc07',1,'ImageViewBase']]]
+  ['checkparameters_41',['checkParameters',['../resize_8cpp.html#a2ad376a1dc8d46b17a1c247c9c2c34f6',1,'resize.cpp']]]
 ];

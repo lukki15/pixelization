@@ -85,22 +85,24 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classStbImage.html#a140947031ed99a3de513759dc57ceb8e">   13</a></span>&#160;    <a class="code" href="classStbImage.html">StbImage</a> &amp;<a class="code" href="classStbImage.html#a140947031ed99a3de513759dc57ceb8e">operator=</a>(<a class="code" href="classStbImage.html">StbImage</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classStbImage.html#af836136baa25cbec083c5ff28c561f11">   14</a></span>&#160;    <a class="code" href="classStbImage.html#af836136baa25cbec083c5ff28c561f11">~StbImage</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStbImage.html#a586cd33748ecd1fe5c1c52f7fb87f75c">getWidth</a>() const noexcept;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStbImage.html#a5db7a5c39a9f4afbe5fc49e20532175a">getHeight</a>() const noexcept;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStbImage.html#a05036bb722ee8de4352163dd88b366ba">getChannels</a>() const noexcept;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    const <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="classStbImage.html#ae5d69bacfdf1436a507538a54e9492f8">getData</a>() const noexcept;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classStbImage.html#a653bc33a3902aa971b60906908ccba94">   16</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classStbImage.html#a653bc33a3902aa971b60906908ccba94">PixelData</a> = <span class="keywordtype">unsigned</span> char;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStbImage.html#a586cd33748ecd1fe5c1c52f7fb87f75c">getWidth</a>() const noexcept;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStbImage.html#a5db7a5c39a9f4afbe5fc49e20532175a">getHeight</a>() const noexcept;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStbImage.html#a05036bb722ee8de4352163dd88b366ba">getChannels</a>() const noexcept;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;private:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    static <span class="keywordtype">void</span> dataDeleter(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *img_data) noexcept;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    using Data = std::unique_ptr&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>, decltype(&amp;dataDeleter)&gt;;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> width{};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> height{};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> channels{}; <span class="comment">// # 8-bit components per pixel</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    Data data{<span class="keyword">nullptr</span>, dataDeleter};</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    const <a class="code" href="classStbImage.html#a653bc33a3902aa971b60906908ccba94">PixelData</a> *<a class="code" href="classStbImage.html#ae5d69bacfdf1436a507538a54e9492f8">getData</a>() const noexcept;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;private:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    static <span class="keywordtype">void</span> dataDeleter(<a class="code" href="classStbImage.html#a653bc33a3902aa971b60906908ccba94">PixelData</a> *img_data) noexcept;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    using Data = std::unique_ptr&lt;<a class="code" href="classStbImage.html#a653bc33a3902aa971b60906908ccba94">PixelData</a>, decltype(&amp;dataDeleter)&gt;;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> width{};</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> height{};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> channels{}; <span class="comment">// # 8-bit components per pixel</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    Data data{<span class="keyword">nullptr</span>, dataDeleter};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
 <div class="ttc" id="aclassStbImage_html"><div class="ttname"><a href="classStbImage.html">StbImage</a></div><div class="ttdef"><b>Definition:</b> stb_image.hpp:7</div></div>
 <div class="ttc" id="aclassStbImage_html_a05036bb722ee8de4352163dd88b366ba"><div class="ttname"><a href="classStbImage.html#a05036bb722ee8de4352163dd88b366ba">StbImage::getChannels</a></div><div class="ttdeci">int getChannels() const noexcept</div><div class="ttdef"><b>Definition:</b> stb_image.cpp:38</div></div>
 <div class="ttc" id="aclassStbImage_html_a140947031ed99a3de513759dc57ceb8e"><div class="ttname"><a href="classStbImage.html#a140947031ed99a3de513759dc57ceb8e">StbImage::operator=</a></div><div class="ttdeci">StbImage &amp; operator=(StbImage &amp;&amp;)=delete</div></div>
@@ -108,9 +110,10 @@ $(function() {
 <div class="ttc" id="aclassStbImage_html_a554220768c68a4df06d1ff9db68b13f3"><div class="ttname"><a href="classStbImage.html#a554220768c68a4df06d1ff9db68b13f3">StbImage::StbImage</a></div><div class="ttdeci">StbImage(const std::filesystem::path &amp;path, int desired_channels=0)</div><div class="ttdef"><b>Definition:</b> stb_image.cpp:8</div></div>
 <div class="ttc" id="aclassStbImage_html_a586cd33748ecd1fe5c1c52f7fb87f75c"><div class="ttname"><a href="classStbImage.html#a586cd33748ecd1fe5c1c52f7fb87f75c">StbImage::getWidth</a></div><div class="ttdeci">int getWidth() const noexcept</div><div class="ttdef"><b>Definition:</b> stb_image.cpp:28</div></div>
 <div class="ttc" id="aclassStbImage_html_a5db7a5c39a9f4afbe5fc49e20532175a"><div class="ttname"><a href="classStbImage.html#a5db7a5c39a9f4afbe5fc49e20532175a">StbImage::getHeight</a></div><div class="ttdeci">int getHeight() const noexcept</div><div class="ttdef"><b>Definition:</b> stb_image.cpp:33</div></div>
+<div class="ttc" id="aclassStbImage_html_a653bc33a3902aa971b60906908ccba94"><div class="ttname"><a href="classStbImage.html#a653bc33a3902aa971b60906908ccba94">StbImage::PixelData</a></div><div class="ttdeci">unsigned char PixelData</div><div class="ttdef"><b>Definition:</b> stb_image.hpp:16</div></div>
 <div class="ttc" id="aclassStbImage_html_aa68271bdbb97b97ca99c22ff4799a633"><div class="ttname"><a href="classStbImage.html#aa68271bdbb97b97ca99c22ff4799a633">StbImage::StbImage</a></div><div class="ttdeci">StbImage(StbImage &amp;&amp;)=delete</div></div>
 <div class="ttc" id="aclassStbImage_html_ae2b038181d7f00544904551c6d0c9da4"><div class="ttname"><a href="classStbImage.html#ae2b038181d7f00544904551c6d0c9da4">StbImage::StbImage</a></div><div class="ttdeci">StbImage(const StbImage &amp;)=delete</div></div>
-<div class="ttc" id="aclassStbImage_html_ae5d69bacfdf1436a507538a54e9492f8"><div class="ttname"><a href="classStbImage.html#ae5d69bacfdf1436a507538a54e9492f8">StbImage::getData</a></div><div class="ttdeci">const unsigned char * getData() const noexcept</div><div class="ttdef"><b>Definition:</b> stb_image.cpp:43</div></div>
+<div class="ttc" id="aclassStbImage_html_ae5d69bacfdf1436a507538a54e9492f8"><div class="ttname"><a href="classStbImage.html#ae5d69bacfdf1436a507538a54e9492f8">StbImage::getData</a></div><div class="ttdeci">const PixelData * getData() const noexcept</div><div class="ttdef"><b>Definition:</b> stb_image.cpp:43</div></div>
 <div class="ttc" id="aclassStbImage_html_af836136baa25cbec083c5ff28c561f11"><div class="ttname"><a href="classStbImage.html#af836136baa25cbec083c5ff28c561f11">StbImage::~StbImage</a></div><div class="ttdeci">~StbImage()=default</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
