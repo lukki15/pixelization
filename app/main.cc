@@ -1,8 +1,8 @@
 #include <filesystem>
 #include <iostream>
+#include <string>
 
 #include <cxxopts.hpp>
-#include <fmt/format.h>
 
 #include <lib_resize/resize.hpp>
 #include <lib_stb/stb_image.hpp>
@@ -14,7 +14,7 @@
 int main(int argc, char **argv)
 {
     const auto welcome_message =
-        fmt::format("{} v{}\n", project_name, project_version);
+        std::string(project_name) + " v" + std::string(project_version);
 
     cxxopts::Options options(project_name.data(), welcome_message);
 

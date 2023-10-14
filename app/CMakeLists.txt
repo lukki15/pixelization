@@ -11,7 +11,6 @@ target_link_libraries(
         ${LIBRARY_NAME}-resize
         ${LIBRARY_NAME}-stb
         ${LIBRARY_NAME}-utils
-        fmt::fmt
         cxxopts::cxxopts
 )
 

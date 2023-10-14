@@ -1,16 +1,19 @@
 # Sources and Headers
 file(GLOB LIBRARY_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 file(GLOB LIBRARY_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/*.hpp")
-set(LIBRARY_INCLUDES "./" "${CMAKE_BINARY_DIR}/configured_files/include" ${STB_INCLUDE_DIRS})
+set(LIBRARY_INCLUDES "./" "${CMAKE_BINARY_DIR}/configured_files/include")
 
 # MyLib Library
 add_library(${LIBRARY_NAME}-stb STATIC ${LIBRARY_SOURCES} ${LIBRARY_HEADERS})
-target_include_directories(${LIBRARY_NAME}-stb PUBLIC ${LIBRARY_INCLUDES})
+target_include_directories(
+    ${LIBRARY_NAME}-stb
+    PUBLIC ${LIBRARY_INCLUDES}
+    PRIVATE ${STB_INCLUDE_DIRS}
+)
 target_link_libraries(
     ${LIBRARY_NAME}-stb
     PRIVATE
-        fmt::fmt
-        cxxopts::cxxopts
+        cxxopts::cxxopts # TODO remove
 )
 
 if(${ENABLE_WARNINGS})
