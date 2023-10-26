@@ -72,74 +72,79 @@ $(function() {
 <div class="contents">
 <a href="image__view_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstddef&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Data&gt;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classImageViewBase.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classImageViewBase.html">ImageViewBase</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    constexpr <span class="keyword">auto</span> getIndex(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span> noexcept</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordflow">return</span> (y * width_ + x) * channels_;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    }</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classImageViewBase.html#ac4bf689c92dd0c423f7b81b91eb50e71">   14</a></span>&#160;    constexpr <a class="code" href="classImageViewBase.html#ac4bf689c92dd0c423f7b81b91eb50e71">ImageViewBase</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classImageViewBase.html#aad0c37870fddffacfd152405292280a8">   15</a></span>&#160;    constexpr <a class="code" href="classImageViewBase.html#aad0c37870fddffacfd152405292280a8">ImageViewBase</a>(<span class="keyword">const</span> <a class="code" href="classImageViewBase.html">ImageViewBase</a> &amp;image_view) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classImageViewBase.html#abf6f8e93f6adeae46e24698c8232d9af">   16</a></span>&#160;    constexpr <a class="code" href="classImageViewBase.html#abf6f8e93f6adeae46e24698c8232d9af">ImageViewBase</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">int</span> channels, Data *<a class="code" href="classImageViewBase.html#a6366276953dd506628821e42bda2dc07">data</a>)</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        : width_{width}, height_(height), channels_(channels), data_(<a class="code" href="classImageViewBase.html#a6366276953dd506628821e42bda2dc07">data</a>)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classImageViewBase.html#adfb3d51a9492c723be7228ee6849d378">   21</a></span>&#160;    constexpr <span class="keywordtype">size_t</span> <a class="code" href="classImageViewBase.html#adfb3d51a9492c723be7228ee6849d378">size</a>() const noexcept</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(width_ * height_ * channels_);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classImageViewBase.html#a295aed6bffa01966937f6c14b5913e66">   25</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="classImageViewBase.html#a295aed6bffa01966937f6c14b5913e66">getWidth</a>() const noexcept</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> width_;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classImageViewBase.html#a3e300c552c5895fc6cae08db867eee9e">   29</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="classImageViewBase.html#a3e300c552c5895fc6cae08db867eee9e">getHeight</a>() const noexcept</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> height_;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classImageViewBase.html#ae75aa322e587e0b922315a1173990a78">   33</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="classImageViewBase.html#ae75aa322e587e0b922315a1173990a78">getChannels</a>() const noexcept</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> channels_;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classImageViewBase.html#a6366276953dd506628821e42bda2dc07">   38</a></span>&#160;    constexpr Data *<a class="code" href="classImageViewBase.html#a6366276953dd506628821e42bda2dc07">data</a>() const noexcept</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> data_;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classImageViewBase.html#a92f5ec273af509277ffea132a4b4be7a">   42</a></span>&#160;    constexpr Data *<a class="code" href="classImageViewBase.html#a92f5ec273af509277ffea132a4b4be7a">get</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span> noexcept</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> (data_ == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">int</span> index = getIndex(x, y);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> &amp;data_[index];</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> width_{};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> height_{};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> channels_{};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    Data *data_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="image__view_8hpp.html#aad527419bf8b3b2107c4eec8b24faada">   59</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classImageViewBase.html">ImageView</a> = <a class="code" href="classImageViewBase.html">ImageViewBase&lt;unsigned char&gt;</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="image__view_8hpp.html#a811ff8625d62740c5f754f5998b99dde">   60</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classImageViewBase.html">ConstImageView</a> = <a class="code" href="classImageViewBase.html">ImageViewBase&lt;const unsigned char&gt;</a>;</div>
-<div class="ttc" id="aclassImageViewBase_html"><div class="ttname"><a href="classImageViewBase.html">ImageViewBase</a></div><div class="ttdef"><b>Definition:</b> image_view.hpp:7</div></div>
-<div class="ttc" id="aclassImageViewBase_html_a295aed6bffa01966937f6c14b5913e66"><div class="ttname"><a href="classImageViewBase.html#a295aed6bffa01966937f6c14b5913e66">ImageViewBase::getWidth</a></div><div class="ttdeci">constexpr auto getWidth() const noexcept</div><div class="ttdef"><b>Definition:</b> image_view.hpp:25</div></div>
-<div class="ttc" id="aclassImageViewBase_html_a3e300c552c5895fc6cae08db867eee9e"><div class="ttname"><a href="classImageViewBase.html#a3e300c552c5895fc6cae08db867eee9e">ImageViewBase::getHeight</a></div><div class="ttdeci">constexpr auto getHeight() const noexcept</div><div class="ttdef"><b>Definition:</b> image_view.hpp:29</div></div>
-<div class="ttc" id="aclassImageViewBase_html_a6366276953dd506628821e42bda2dc07"><div class="ttname"><a href="classImageViewBase.html#a6366276953dd506628821e42bda2dc07">ImageViewBase::data</a></div><div class="ttdeci">constexpr Data * data() const noexcept</div><div class="ttdef"><b>Definition:</b> image_view.hpp:38</div></div>
-<div class="ttc" id="aclassImageViewBase_html_a92f5ec273af509277ffea132a4b4be7a"><div class="ttname"><a href="classImageViewBase.html#a92f5ec273af509277ffea132a4b4be7a">ImageViewBase::get</a></div><div class="ttdeci">constexpr Data * get(int x, int y) const noexcept</div><div class="ttdef"><b>Definition:</b> image_view.hpp:42</div></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Data&gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classImageViewBase.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classImageViewBase.html">ImageViewBase</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    constexpr <span class="keyword">auto</span> getIndex(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">return</span> (y * width_ + x) * channels_;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classImageViewBase.html#ac4bf689c92dd0c423f7b81b91eb50e71">   17</a></span>&#160;    constexpr <a class="code" href="classImageViewBase.html#ac4bf689c92dd0c423f7b81b91eb50e71">ImageViewBase</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classImageViewBase.html#aad0c37870fddffacfd152405292280a8">   18</a></span>&#160;    constexpr <a class="code" href="classImageViewBase.html#aad0c37870fddffacfd152405292280a8">ImageViewBase</a>(<span class="keyword">const</span> <a class="code" href="classImageViewBase.html">ImageViewBase</a> &amp;image_view) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classImageViewBase.html#abf6f8e93f6adeae46e24698c8232d9af">   19</a></span>&#160;    constexpr <a class="code" href="classImageViewBase.html#abf6f8e93f6adeae46e24698c8232d9af">ImageViewBase</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">int</span> channels, Data *<a class="code" href="classImageViewBase.html#a6366276953dd506628821e42bda2dc07">data</a>)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        : width_{width}, height_(height), channels_(channels), data_(<a class="code" href="classImageViewBase.html#a6366276953dd506628821e42bda2dc07">data</a>)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classImageViewBase.html#adfb3d51a9492c723be7228ee6849d378">   24</a></span>&#160;    constexpr <span class="keywordtype">size_t</span> <a class="code" href="classImageViewBase.html#adfb3d51a9492c723be7228ee6849d378">size</a>() const noexcept</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(width_ * height_ * channels_);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classImageViewBase.html#a295aed6bffa01966937f6c14b5913e66">   28</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="classImageViewBase.html#a295aed6bffa01966937f6c14b5913e66">getWidth</a>() const noexcept</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> width_;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classImageViewBase.html#a3e300c552c5895fc6cae08db867eee9e">   32</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="classImageViewBase.html#a3e300c552c5895fc6cae08db867eee9e">getHeight</a>() const noexcept</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> height_;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classImageViewBase.html#ae75aa322e587e0b922315a1173990a78">   36</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="classImageViewBase.html#ae75aa322e587e0b922315a1173990a78">getChannels</a>() const noexcept</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> channels_;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classImageViewBase.html#a6366276953dd506628821e42bda2dc07">   41</a></span>&#160;    constexpr Data *<a class="code" href="classImageViewBase.html#a6366276953dd506628821e42bda2dc07">data</a>() const noexcept</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> data_;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classImageViewBase.html#a92f5ec273af509277ffea132a4b4be7a">   45</a></span>&#160;    constexpr Data *<a class="code" href="classImageViewBase.html#a92f5ec273af509277ffea132a4b4be7a">get</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (data_ == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        assert(0 &lt;= x &amp;&amp; x &lt; <a class="code" href="classImageViewBase.html#a295aed6bffa01966937f6c14b5913e66">getWidth</a>());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        assert(0 &lt;= y &amp;&amp; y &lt; <a class="code" href="classImageViewBase.html#a3e300c552c5895fc6cae08db867eee9e">getHeight</a>());</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">int</span> index = getIndex(x, y);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> &amp;data_[index];</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> width_{};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> height_{};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> channels_{};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    Data *data_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="image__view_8hpp.html#aad527419bf8b3b2107c4eec8b24faada">   64</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classImageViewBase.html">ImageView</a> = <a class="code" href="classImageViewBase.html">ImageViewBase&lt;unsigned char&gt;</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="image__view_8hpp.html#a811ff8625d62740c5f754f5998b99dde">   65</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classImageViewBase.html">ConstImageView</a> = <a class="code" href="classImageViewBase.html">ImageViewBase&lt;const unsigned char&gt;</a>;</div>
+<div class="ttc" id="aclassImageViewBase_html"><div class="ttname"><a href="classImageViewBase.html">ImageViewBase</a></div><div class="ttdef"><b>Definition:</b> image_view.hpp:10</div></div>
+<div class="ttc" id="aclassImageViewBase_html_a295aed6bffa01966937f6c14b5913e66"><div class="ttname"><a href="classImageViewBase.html#a295aed6bffa01966937f6c14b5913e66">ImageViewBase::getWidth</a></div><div class="ttdeci">constexpr auto getWidth() const noexcept</div><div class="ttdef"><b>Definition:</b> image_view.hpp:28</div></div>
+<div class="ttc" id="aclassImageViewBase_html_a3e300c552c5895fc6cae08db867eee9e"><div class="ttname"><a href="classImageViewBase.html#a3e300c552c5895fc6cae08db867eee9e">ImageViewBase::getHeight</a></div><div class="ttdeci">constexpr auto getHeight() const noexcept</div><div class="ttdef"><b>Definition:</b> image_view.hpp:32</div></div>
+<div class="ttc" id="aclassImageViewBase_html_a6366276953dd506628821e42bda2dc07"><div class="ttname"><a href="classImageViewBase.html#a6366276953dd506628821e42bda2dc07">ImageViewBase::data</a></div><div class="ttdeci">constexpr Data * data() const noexcept</div><div class="ttdef"><b>Definition:</b> image_view.hpp:41</div></div>
+<div class="ttc" id="aclassImageViewBase_html_a92f5ec273af509277ffea132a4b4be7a"><div class="ttname"><a href="classImageViewBase.html#a92f5ec273af509277ffea132a4b4be7a">ImageViewBase::get</a></div><div class="ttdeci">constexpr Data * get(int x, int y) const noexcept</div><div class="ttdef"><b>Definition:</b> image_view.hpp:45</div></div>
 <div class="ttc" id="aclassImageViewBase_html_aad0c37870fddffacfd152405292280a8"><div class="ttname"><a href="classImageViewBase.html#aad0c37870fddffacfd152405292280a8">ImageViewBase::ImageViewBase</a></div><div class="ttdeci">constexpr ImageViewBase(const ImageViewBase &amp;image_view)=default</div></div>
-<div class="ttc" id="aclassImageViewBase_html_abf6f8e93f6adeae46e24698c8232d9af"><div class="ttname"><a href="classImageViewBase.html#abf6f8e93f6adeae46e24698c8232d9af">ImageViewBase::ImageViewBase</a></div><div class="ttdeci">constexpr ImageViewBase(int width, int height, int channels, Data *data)</div><div class="ttdef"><b>Definition:</b> image_view.hpp:16</div></div>
+<div class="ttc" id="aclassImageViewBase_html_abf6f8e93f6adeae46e24698c8232d9af"><div class="ttname"><a href="classImageViewBase.html#abf6f8e93f6adeae46e24698c8232d9af">ImageViewBase::ImageViewBase</a></div><div class="ttdeci">constexpr ImageViewBase(int width, int height, int channels, Data *data)</div><div class="ttdef"><b>Definition:</b> image_view.hpp:19</div></div>
 <div class="ttc" id="aclassImageViewBase_html_ac4bf689c92dd0c423f7b81b91eb50e71"><div class="ttname"><a href="classImageViewBase.html#ac4bf689c92dd0c423f7b81b91eb50e71">ImageViewBase::ImageViewBase</a></div><div class="ttdeci">constexpr ImageViewBase()=default</div></div>
-<div class="ttc" id="aclassImageViewBase_html_adfb3d51a9492c723be7228ee6849d378"><div class="ttname"><a href="classImageViewBase.html#adfb3d51a9492c723be7228ee6849d378">ImageViewBase::size</a></div><div class="ttdeci">constexpr size_t size() const noexcept</div><div class="ttdef"><b>Definition:</b> image_view.hpp:21</div></div>
-<div class="ttc" id="aclassImageViewBase_html_ae75aa322e587e0b922315a1173990a78"><div class="ttname"><a href="classImageViewBase.html#ae75aa322e587e0b922315a1173990a78">ImageViewBase::getChannels</a></div><div class="ttdeci">constexpr auto getChannels() const noexcept</div><div class="ttdef"><b>Definition:</b> image_view.hpp:33</div></div>
+<div class="ttc" id="aclassImageViewBase_html_adfb3d51a9492c723be7228ee6849d378"><div class="ttname"><a href="classImageViewBase.html#adfb3d51a9492c723be7228ee6849d378">ImageViewBase::size</a></div><div class="ttdeci">constexpr size_t size() const noexcept</div><div class="ttdef"><b>Definition:</b> image_view.hpp:24</div></div>
+<div class="ttc" id="aclassImageViewBase_html_ae75aa322e587e0b922315a1173990a78"><div class="ttname"><a href="classImageViewBase.html#ae75aa322e587e0b922315a1173990a78">ImageViewBase::getChannels</a></div><div class="ttdeci">constexpr auto getChannels() const noexcept</div><div class="ttdef"><b>Definition:</b> image_view.hpp:36</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
