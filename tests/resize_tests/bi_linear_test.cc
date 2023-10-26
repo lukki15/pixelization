@@ -94,10 +94,13 @@ TEST_CASE("input is half output", "[lib_resize, resize, bi_linear]")
             auto input_x = x / 2;
             auto input_y = y / 2;
 
+            auto next_x = std::min(input_x + 1, input.getWidth() - 1);
+            auto next_y = std::min(input_y + 1, input.getHeight() - 1);
+
             auto pixel_top_left = input.get(input_x, input_y);
-            auto pixel_top_right = input.get(input_x, input_y + 1);
-            auto pixel_bottom_left = input.get(input_x + 1, input_y);
-            auto pixel_bottom_right = input.get(input_x + 1, input_y + 1);
+            auto pixel_top_right = input.get(input_x, next_y);
+            auto pixel_bottom_left = input.get(next_x, input_y);
+            auto pixel_bottom_right = input.get(next_x, next_y);
 
             for (int c = 0; c < output.getChannels(); c++)
             {

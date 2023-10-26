@@ -91,8 +91,8 @@ TEST_CASE("input is half output", "[lib_resize, resize, nearest_neighbor]")
     {
         for (int x = 0; x < output.getWidth(); x++)
         {
-            auto input_x = (x + 1) / 2;
-            auto input_y = (y + 1) / 2;
+            auto input_x = std::min((x + 1) / 2, input.getWidth() - 1);
+            auto input_y = std::min((y + 1) / 2, input.getHeight() - 1);
             for (int c = 0; c < output.getChannels(); c++)
             {
                 CHECK(input.get(input_x, input_y)[c] == output.get(x, y)[c]);
@@ -147,7 +147,7 @@ TEST_CASE("input double with half height",
         for (int x = 0; x < output.getWidth(); x++)
         {
             auto input_x = x * 2;
-            auto input_y = (y + 1) / 2;
+            auto input_y = std::min((y + 1) / 2, input.getHeight() - 1);
             for (int c = 0; c < output.getChannels(); c++)
             {
                 CHECK(input.get(input_x, input_y)[c] == output.get(x, y)[c]);

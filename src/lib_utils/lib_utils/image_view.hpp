@@ -1,6 +1,9 @@
 #pragma once
 
+#include <cassert>
 #include <cstddef>
+
+#include <iostream>
 
 template <typename Data>
 class ImageViewBase
@@ -45,6 +48,8 @@ public:
         {
             return nullptr;
         }
+        assert(0 <= x && x < getWidth());
+        assert(0 <= y && y < getHeight());
         int index = getIndex(x, y);
         return &data_[index];
     }

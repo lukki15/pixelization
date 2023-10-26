@@ -9,7 +9,8 @@
 #include <stdexcept>
 #include <vector>
 
-void checkParameters(const ConstImageView &input, const ImageView &output)
+static void checkParameters(const ConstImageView &input,
+                            const ImageView &output)
 {
     if (input.getChannels() != output.getChannels())
     {
@@ -19,6 +20,16 @@ void checkParameters(const ConstImageView &input, const ImageView &output)
     {
         throw std::runtime_error("input or output can not be zero");
     }
+}
+
+template <typename T>
+static constexpr auto getPixelBounded(const ImageViewBase<T> &input,
+                                      int x,
+                                      int y)
+{
+    auto bounded_x = std::max(0, std::min(input.getWidth() - 1, x));
+    auto bounded_y = std::max(0, std::min(input.getHeight() - 1, y));
+    return input.get(bounded_x, bounded_y);
 }
 
 void resizeNearestNeighbor(const ConstImageView &input, ImageView &output)
@@ -34,7 +45,7 @@ void resizeNearestNeighbor(const ConstImageView &input, ImageView &output)
         for (int x = 0; x < output.getWidth(); x++)
         {
             int input_x = static_cast<int>(std::round(x * delta_width));
-            const auto *input_pixel = input.get(input_x, input_y);
+            const auto *input_pixel = getPixelBounded(input, input_x, input_y);
             auto *output_pixel = output.get(x, y);
             std::copy_n(input_pixel, input.getChannels(), output_pixel);
         }
@@ -82,12 +93,14 @@ void resizeBiLinear(const ConstImageView &input, ImageView &output)
 
             auto *output_pixel = output.get(x, y);
 
-            auto pixel_top_left = input.get(input_x_pixel, input_y_pixel);
-            auto pixel_top_right = input.get(input_x_pixel + 1, input_y_pixel);
+            auto pixel_top_left =
+                getPixelBounded(input, input_x_pixel, input_y_pixel);
+            auto pixel_top_right =
+                getPixelBounded(input, input_x_pixel + 1, input_y_pixel);
             auto pixel_bottom_left =
-                input.get(input_x_pixel, input_y_pixel + 1);
+                getPixelBounded(input, input_x_pixel, input_y_pixel + 1);
             auto pixel_bottom_right =
-                input.get(input_x_pixel + 1, input_y_pixel + 1);
+                getPixelBounded(input, input_x_pixel + 1, input_y_pixel + 1);
 
             linearInterpolation(input.getChannels(),
                                 pixel_top_left,
@@ -107,7 +120,7 @@ void resizeBiLinear(const ConstImageView &input, ImageView &output)
         }
     }
 }
-#include <iostream>
+
 // https://www.paulinternet.nl/?page=bicubic
 template <typename T>
 static constexpr double cubicInterpolate(double t, T A, T B, T C, T D)
@@ -118,13 +131,6 @@ static constexpr double cubicInterpolate(double t, T A, T B, T C, T D)
     double d = B;
 
     return a * t * t * t + b * t * t + c * t + d;
-}
-
-static constexpr auto getPixelBounded(const ConstImageView &input, int x, int y)
-{
-    auto bounded_x = std::max(0, std::min(input.getWidth() - 1, x));
-    auto bounded_y = std::max(0, std::min(input.getHeight() - 1, y));
-    return input.get(bounded_x, bounded_y);
 }
 
 void bicubicInterpolate(const ConstImageView &input,
