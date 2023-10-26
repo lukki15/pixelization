@@ -25,7 +25,8 @@ int main(int argc, char **argv)
         ("w,width", "Output image width", cxxopts::value<int>())         //
         ("h,height", "Output image height", cxxopts::value<int>())       //
         ("nearest_neighbor", "Resize with nearest-neighbor")             //
-        ("bi_linear", "Resize with bi-linear");
+        ("bi_linear", "Resize with bi-linear")                           //
+        ("bi_cubic", "Resize with bi-cubic");
 
     auto result = options.parse(argc, argv);
 
@@ -60,6 +61,10 @@ int main(int argc, char **argv)
     else if (result.count("bi_linear"))
     {
         resizeBiLinear(input_view, output_view);
+    }
+    else if (result.count("bi_cubic"))
+    {
+        resizeBiCubic(input_view, output_view);
     }
     else
     {
