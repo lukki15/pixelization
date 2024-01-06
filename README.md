@@ -1,7 +1,8 @@
 # pixelization
+Convert images into pixel art
 
-![C++](https://img.shields.io/badge/C%2B%2B-11%2F14%2F17%2F20%2F23-blue)
-![License](https://camo.githubusercontent.com/890acbdcb87868b382af9a4b1fac507b9659d9bf/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667)
+![C++](https://img.shields.io/badge/C%2B%2B-17-blue)
+![C++](https://img.shields.io/badge/Linux-17-blue)
 
 [![Main CI](https://github.com/lukki15/pixelization/actions/workflows/build-target-main.yaml/badge.svg)](https://github.com/lukki15/pixelization/actions/workflows/build-target-main.yaml)
 [![Unit-Test CI](https://github.com/lukki15/pixelization/actions/workflows/build-target-unit-test.yaml/badge.svg)](https://github.com/lukki15/pixelization/actions/workflows/build-target-unit-test.yaml)
@@ -13,4 +14,61 @@
 [![Documentation](https://github.com/lukki15/pixelization/actions/workflows/documentation.yml/badge.svg)](https://github.com/lukki15/pixelization/actions/workflows/documentation.yml)
 [![CodeQL](https://github.com/lukki15/pixelization/actions/workflows/codeql.yml/badge.svg)](https://github.com/lukki15/pixelization/actions/workflows/codeql.yml)
 
-Convert images into pixel art
+## setup
+
+```bash
+$ make prepare
+$ make prepare_vcpkg
+```
+
+see GitHub [build target action](.github/workflows/build-target-main.yaml)
+
+## build
+
+```bash
+$ cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="Release"
+$ cmake --build build --config Release --target main -j
+```
+
+## execution
+
+```
+$ ./build/app/main --help
+Pixelization v0.1.0
+Usage:
+  Pixelization [OPTION...]
+
+      --help              Print usage
+  -i, --input arg         Input image file
+  -o, --output arg        Output image file
+  -w, --width arg         Output image width
+  -h, --height arg        Output image height
+      --nearest_neighbor  Resize with nearest-neighbor
+      --bi_linear         Resize with bi-linear
+      --bi_cubic          Resize with bi-cubic
+```
+
+## example
+
+### original
+![original](assets/example.jpg) 
+
+[image source](https://www.pexels.com/photo/smiling-woman-with-red-hair-1987301/)
+
+### nearest neighbor
+```
+$ ./build/app/main -i assets/example.jpg -o assets/exampleNearestNeighbor.jpg -w 320 -h 480 --nearest_neighbor
+```
+![nearest neighbor](assets/exampleNearestNeighbor.jpg)
+
+### bi linear
+```
+./build/app/main -i assets/example.jpg -o assets/exampleBiLinear.jpg -w 320 -h 480 --bi_linear
+```
+![bi linear](assets/exampleBiLinear.jpg)
+
+### bi cubic
+```
+./build/app/main -i assets/example.jpg -o assets/exampleBiCubic.jpg -w 320 -h 480 --bi_cubic
+```
+![bi cubic](assets/exampleBiCubic.jpg)
