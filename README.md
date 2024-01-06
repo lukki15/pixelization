@@ -51,7 +51,7 @@ Usage:
 ## example
 
 ### original
-![original](assets/example.jpg) 
+![original](assets/example.jpg)
 
 [image source](https://www.pexels.com/photo/smiling-woman-with-red-hair-1987301/)
 
